@@ -1,0 +1,3 @@
+EXCLUDE=*.swp
+EXCLUDE=tmp/*
+/var/www/html/webdirectory
