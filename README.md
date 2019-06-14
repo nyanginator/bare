@@ -82,7 +82,7 @@ To restore the backup from July 15, 2018 8:42am.
 ```
 $ ./bare.sh restore webdirectory 2018.07.15.0842
 ```
-Make sure the backup directory (i.e. `2018-07-15/webdirectory/2018.07.15.0842`) exists in the `BKUPDESTPATH` you set. You may also want to first delete all files and tables in the folders and databases you are restoring to, since any new files/tables will not be deleted by the script.
+Make sure the backup directory (i.e. `2018-07-15/webdirectory/2018.07.15.0842`) exists in the `BKUPDESTPATH` you set. The script *will* delete previously existing files, folders, and databases. Run the backup command first if you think you will need to restore them to their existing state later on.
 
 Cron
 ----
