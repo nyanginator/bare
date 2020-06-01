@@ -98,4 +98,4 @@ If there are any errors, the `.log` file will be prefixed with `BARE-ERRORS_`. I
 Contact
 =======
 Nicholas Yang\
-http://nyanginator.wixsite.com/home
+https://nicky.pairsite.com
