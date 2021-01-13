@@ -46,12 +46,12 @@ Database Login Credentials
 The usernames and passwords for database logins should be stored in `~/.my.cnf`, which should have 600 permissions. Specify each database's login information as follows:
 
 ```
-[clientdatabasename1] # The literal word "client" + DB name
+[client_databasename1] # "client_" + DB name
 user=myuser
 password=mypassword
 host=localhost
       
-[clientdatabasename2]
+[client_databasename2]
 user=myuser
 password=mypassword
 host=localhost
@@ -97,5 +97,5 @@ If there are any errors, the `.log` file will be prefixed with `BARE-ERRORS_`. I
 
 Contact
 =======
-Nicholas Yang\
-https://nicky.pairsite.com
+Nicholas Yang  
+https://nyanginator.com

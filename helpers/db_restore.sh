@@ -19,21 +19,21 @@ if [ $# == 5 ]; then
   cd $BKUPPATH
 
   echo "[INFO] Dropping old database, if it exists"
-  if ! $MYSQLCMDPATH --defaults-group-suffix=$THEDB -e "DROP DATABASE IF EXISTS ${THEDB}"; then
+  if ! $MYSQLCMDPATH --defaults-group-suffix=_$THEDB -e "DROP DATABASE IF EXISTS ${THEDB}"; then
       echo "[ERROR] Could not drop old database"
       echo ""
       exit
   fi
 
   echo "[INFO] Creating new empty database"
-  if ! $MYSQLCMDPATH --defaults-group-suffix=$THEDB -e "CREATE DATABASE ${THEDB} COLLATE utf8_general_ci"; then
+  if ! $MYSQLCMDPATH --defaults-group-suffix=_$THEDB -e "CREATE DATABASE ${THEDB} COLLATE utf8_general_ci"; then
       echo "[ERROR] Could not create new empty database"
       echo ""
       exit
   fi
   echo ""
   
-  if time -p gzip -cd < ${GZLABEL} | $MYSQLCMDPATH --defaults-group-suffix=$THEDB $THEDB; then
+  if time -p gzip -cd < ${GZLABEL} | $MYSQLCMDPATH --defaults-group-suffix=_$THEDB $THEDB; then
     echo "mysql import COMPLETE ($?) for database: $THEDB of site: $SITENAME"
   else
     echo "mysql import ERRORS encountered ($?) for database: $THEDB of site: $SITENAME"

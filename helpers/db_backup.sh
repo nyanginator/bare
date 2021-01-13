@@ -9,7 +9,7 @@ if [ $# == 5 ]; then
   DUMPCMDPATH=$5
 
   mkdir -p $BKUPPATH
-  if time -p $DUMPCMDPATH --defaults-group-suffix=$THEDB $THEDB | gzip > $BKUPPATH/${LABEL}-${THEDB}.sql.gz; then
+  if time -p $DUMPCMDPATH --defaults-group-suffix=_$THEDB --no-tablespaces $THEDB | gzip > $BKUPPATH/${LABEL}-${THEDB}.sql.gz; then
     echo "mysqldump COMPLETE ($?) for database: $THEDB of site: $SITENAME"
   else
     echo "mysqldump ERRORS encountered ($?) for database: $THEDB of site: $SITENAME"
