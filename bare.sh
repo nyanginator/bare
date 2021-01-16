@@ -268,6 +268,7 @@ if ([ $# -ge 2 ] && [ $# -le 3 ]); then
     echo '' 2>&1 | tee -a $LOGFILE
 
     COMPLETEDDATE=`date -u +"%s"`
+    COMPLETEDDATE=$((COMPLETEDDATE+(DATEHOURADJ*3600)))
     COMPLETEDDATESTAMP=$(date +"%a %b %d %Y %H:%M:%S" -d @${COMPLETEDDATE})
     DATESTAMP=$(date +"%a %b %d %Y %H:%M:%S" -d @${DATE})
     echo "["${1}"] $SITENAME STARTED on $DATESTAMP" 2>&1 | tee -a $LOGFILE
